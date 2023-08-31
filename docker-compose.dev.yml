@@ -5,38 +5,9 @@ services:
     ports:
       - 5432:5432
     environment:
-      POSTGRES_PASSWORD: q6jaB23BKwY2CbU
+      POSTGRES_PASSWORD: secret
     volumes: 
       - ./postgres-data:/var/lib/postgresql/data
-  # server:
-  #   image: tw-backend-dev
-  #   build: 
-  #     context: .
-  #     dockerfile: dev.Dockerfile
-  #   volumes:
-  #     - ./:/usr/src/app
-  #     # - ./backend/:/usr/src/app
-  #   ports:
-  #     - 4000:4000
-  #   environment:
-  #     - DATABASE_URL=postgres://postgres:muOSVKcM0VqtwpE@postgres:5432/postgres
-  #     - JWT_SECRET=gensai
-  #     # - PORT=3003
-  #     # - NODE_ENV=development
-  #   container_name: tw-backend
-   
-  # app:
-  #   image: bloglist-redux
-  #   build: 
-  #     context: ./bloglist-redux/
-  #     dockerfile: dev.Dockerfile
-  #   volumes:
-  #     - ./bloglist-redux/:/usr/src/app # The path can be relative, so ./ is enough to say "the same location as the docker-compose.yml"
-  #   environment:
-  #     - REACT_APP_BACKEND_URL=http://localhost:3003/api
-  #   ports:
-  #     - 3000:3000
-  #   # container_name: frontend
   
 volumes:
   postgres_data:
