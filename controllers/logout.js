@@ -10,7 +10,7 @@ router.delete('/', async (req, res) => {
   const authorization = req.get('authorization')
   req.decodedToken = jwt.verify(authorization.substring(7), SECRET)
     
-  const user = await User.findByPk(req.decodedToken.id)
+ //const user = await User.findByPk(req.decodedToken.id)
   
 //   if (user.disabled) {
 //     return response.status(401).json({
@@ -25,7 +25,7 @@ router.delete('/', async (req, res) => {
 
   //const token = jwt.sign(userForToken, SECRET)
   //const loginedUser = await User.findByPk(req.decodedToken.id)
-  console.log(req.decodedToken)
+  //console.log(req.decodedToken)
   const result = await Session.destroy({where: { userId: req.decodedToken.id}})
 
   res
